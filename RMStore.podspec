@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.frameworks = 'StoreKit'
   s.requires_arc = true
   s.default_subspec = 'Core'
-  #s.static_framework = true
+  s.static_framework = true
 
   s.subspec 'Core' do |core|
     core.source_files = 'RMStore/*.{h,m}'
@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
     arv.dependency 'RMStore/Core'
     arv.platform = :ios, '7.0'
     arv.source_files = 'RMStore/Optional/RMStoreAppReceiptVerifier.{h,m}', 'RMStore/Optional/RMAppReceipt.{h,m}'
-    arv.dependency 'OpenSSL-iOS'
+    arv.dependency 'OpenSSL-iOS', '~> 1.0'
 
     arv.vendored_libraries = '${PODS_ROOT}/OpenSSL-iOS/libcrypto.a', '${PODS_ROOT}/OpenSSL-iOS/libssl.a'
     arv.libraries = 'ssl', 'crypto'
